@@ -147,9 +147,9 @@ def isPhoneNumber(input):
 # print(mo.group())
 
 # 通配字符 在正则表达式中， .（句点）字符称为“通配符”。它匹配除了换行之外的所有字符 句点字符只匹配一个字符
-atRegex = re.compile(r'.at')
-mo = atRegex.findall('The cat in the hat sat on the flat mat.')
-print(mo)
+# atRegex = re.compile(r'.at')
+# mo = atRegex.findall('The cat in the hat sat on the flat mat.')
+# print(mo)
 
 
 
@@ -168,3 +168,13 @@ print(mo)
 # \D、 \W 和\S 分别匹配出数字、单词和空格外的所有字符。
 # [abc]匹配方括号内的任意字符（诸如 a、 b 或 c）。
 # [^abc]匹配不在方括号内的任意字符
+
+# 不区分大小写的匹配
+# robocop = re.compile(r'robocop', re.I)
+# mo =robocop.search('RoboCop is part man, part machine, all cop.').group()
+# print(mo)
+
+# 用 sub()方法替换字符串
+namesRegex = re.compile(r'Agent \w+')
+mo = namesRegex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.')
+print(mo)
